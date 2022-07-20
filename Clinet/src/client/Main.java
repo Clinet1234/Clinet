@@ -1,6 +1,7 @@
 package client;
 
 import lobbyserver.client.LobbyServerClient;
+import loginserver.loginclient;
 import chattingserver.ChattingClient;
 
 public class Main {

@@ -1,4 +1,4 @@
-package client;
+package loginserver;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
+
+import client.ILoginClient;
 
 public class loginclient implements ILoginClient {
 
