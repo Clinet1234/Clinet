@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
+//
 class ChattingLobbbyConnecter extends Thread {
 	Socket socket = null;
 	String ip = null;
