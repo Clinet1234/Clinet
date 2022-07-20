@@ -1,5 +1,5 @@
 package client;
 
-public interface ILobbyServer {
+public interface ILobbyCllient {
 	String connectLobbyServer();
 }
