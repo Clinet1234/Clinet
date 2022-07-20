@@ -2,9 +2,9 @@ package client;
 
 public class Main {
 	public static void main(String[] args) {
-		ILoginserver login_server; // = new ~
-		ILobbyServer lobby_server; // = new ~
-		IChattingServer chatting_server; //  = new ~
+		ILoginClient login_server; // = new ~
+		ILobbyClient lobby_server; // = new ~
+		IChattingClient chatting_server; //  = new ~
 		boolean result = login_server.connectLoginServer();
 		if (result) {
 			String ip_address = lobby_server.connectLobbyServer();
