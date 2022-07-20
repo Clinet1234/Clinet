@@ -5,7 +5,7 @@ import chattingserver.ChattingClient;
 
 public class Main {
 	public static void main(String[] args) {
-		ILoginClient login_server; // = new ~
+		ILoginClient login_server = new loginclient();
 		ILobbyClient lobby_server = new LobbyServerClient();
 		IChattingClient chatting_server = new ChattingClient();
 		boolean result = login_server.connectLoginServer();
