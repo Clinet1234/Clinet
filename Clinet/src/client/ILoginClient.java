@@ -1,5 +1,5 @@
 package client;
 
-public interface ILoginserver {
+public interface ILoginClient {
 	boolean connectLoginServer();
 }

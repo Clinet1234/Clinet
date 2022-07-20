@@ -1,5 +1,5 @@
 package client;
 
-public interface IChattingServer {
+public interface IChattingClient {
 	void connectChattingServer(String ipaddress);
 }
