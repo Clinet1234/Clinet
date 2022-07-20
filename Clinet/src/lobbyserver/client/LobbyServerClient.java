@@ -41,7 +41,6 @@ public class LobbyServerClient implements ILobbyClient {
 			
 			System.out.println("please put chatting server number to connect.");
 			int input_num;
-			Scanner sc = new Scanner(System.in);
 			input_num = sc.nextInt();
 			
 			OutputStream out = socket.getOutputStream();
