@@ -61,7 +61,7 @@ public class LobbyServer {
 	
 	public void allow_user_in_chatting_server(int chatting_server_num, String userIP) {
 		if (chatting_server_num < chatting_servers.size() - 1) {
-			chatting_servers.get(chatting_server_num).allow_user(userIP);
+			chatting_servers.get(chatting_server_num).allow_user_in_chatting_server(userIP);
 		} else {
 			System.out.println("requested chatting server id " + chatting_server_num + " from client " + userIP + " is not valid.");
 		}
@@ -74,6 +74,7 @@ public class LobbyServer {
 			res += "server " + i + " : \n";
 			res += chatting_servers.get(i).get_user() + "\n";
 		}
+		res += "\nend_server_info";
 		return res;
 	}
 }
