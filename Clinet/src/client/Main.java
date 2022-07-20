@@ -1,12 +1,13 @@
 package client;
 
 import lobbyserver.client.LobbyServerClient;
+import chattingserver.ChattingClient;
 
 public class Main {
 	public static void main(String[] args) {
 		ILoginClient login_server; // = new ~
 		ILobbyClient lobby_server = new LobbyServerClient();
-		IChattingClient chatting_server; //  = new ~
+		IChattingClient chatting_server = new ChattingClient();
 		boolean result = login_server.connectLoginServer();
 		if (result) {
 			String ip_address = lobby_server.connectLobbyServer();
