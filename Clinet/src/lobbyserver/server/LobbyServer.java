@@ -8,7 +8,7 @@ import java.net.Socket;
 public class LobbyServer {
 
 	private static LobbyServer INSTANCE = new LobbyServer();
-	private static final int CLIENT_PORT = 3000;
+	public static final int CLIENT_PORT = 3000;
 
 	private ArrayList<LobbyChattingServerListener> chatting_servers;
 	private boolean isRunning;
