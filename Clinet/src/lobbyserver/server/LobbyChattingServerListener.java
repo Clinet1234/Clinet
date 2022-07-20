@@ -33,16 +33,7 @@ public class LobbyChattingServerListener extends Thread {
             e.printStackTrace();
         }
     }
-
-    public void allow_user(String userIP) {
-        try {
-            OutputStream out = chatting_socket.getOutputStream();
-            PrintWriter writer = new PrintWriter(out, true);
-            writer.println("1 " + userIP);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    
     public String get_user() {
         try {
             String res = "";
@@ -71,7 +62,7 @@ public class LobbyChattingServerListener extends Thread {
 		try {
 			out = chatting_socket.getOutputStream();
 	        PrintWriter writer = new PrintWriter(out, true);
-	        writer.println("1 " + userip);
+	        writer.println("2 " + userip);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
