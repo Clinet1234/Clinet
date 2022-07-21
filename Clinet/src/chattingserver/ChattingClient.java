@@ -8,7 +8,7 @@ import java.net.Socket;
 import client.IChattingClient;
 
 public class ChattingClient implements IChattingClient {
-	// 00000000000000000000000000000000000000000000
+	// 저녁먹고가자
 	public void connectChattingServer(String ipaddress) {
 		String name = "user";
 		int port = 4000;
