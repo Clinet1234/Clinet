@@ -14,6 +14,7 @@ public class LobbyServer {
 	private boolean isRunning;
 	
 	private LobbyServer() {
+		chatting_servers = new ArrayList<LobbyChattingServerListener>();
 	}
 
 	public static LobbyServer getInstance() {
