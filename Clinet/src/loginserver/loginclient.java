@@ -17,6 +17,7 @@ public class loginclient implements ILoginClient {
 		try {
 		Scanner sc = new Scanner(System.in);
 		String ip;
+		System.out.println("ip주소 입력: ");
 		ip = sc.nextLine();
 		
 		Socket socket = new Socket(ip,1233);
@@ -99,13 +100,13 @@ public class loginclient implements ILoginClient {
 	}
 	System.out.println("로그인 되었습니다");
 
-	sc.close();
-	socket.close();
-	
 	}
-	
+
+	socket.close();
+		
 
 		}catch(Exception e) {e.printStackTrace();}	
-		return false;
+		
+		return true;
 	}
 }

@@ -30,17 +30,18 @@ public class LobbyServer {
 
 	public void run() {
 		System.out.println("lobby server started running");
+		try {
 		while (isRunning) {
-			try {
 				ServerSocket server_socket_client = new ServerSocket(CLIENT_PORT);
 				Socket socket_client = server_socket_client.accept();
 				System.out.println("client accepted");
 				Thread th = new LobbyClientListener(server_socket_client, socket_client);
 				th.start();
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-		}
+		}catch (Exception e) {
+				e.printStackTrace();
+	}
+		
 		System.out.println("lobby server finished running");
 		this.quit();
 	}
