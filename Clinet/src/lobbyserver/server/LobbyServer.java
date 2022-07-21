@@ -20,7 +20,7 @@ public class LobbyServer {
 	public static LobbyServer getInstance() {
 		return INSTANCE;
 	}
-
+	
 	public void init() {
 		System.out.println("lobby server started init");
 		addChatting();
@@ -59,7 +59,9 @@ public class LobbyServer {
 	}
 	
 	public void addChatting() {
-		chatting_servers.add(new LobbyChattingServerListener(chatting_servers.size()));
+		LobbyChattingServerListener chating = new LobbyChattingServerListener(chatting_servers.size());
+		chating.run();
+		chatting_servers.add(chating);
 	}
 	
 	public void allow_user_in_chatting_server(int chatting_server_num, String userIP) {
