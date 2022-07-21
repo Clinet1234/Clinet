@@ -116,7 +116,7 @@ public class ChattingServerMain extends Thread {
 		LobbyIp = sc.nextLine();
 		ChattingLobbbyConnecter chattinglobbbyconnecter = new ChattingLobbbyConnecter(LobbyIp);
 		
-		chattinglobbbyconnecter.run();
+		chattinglobbbyconnecter.start();
 		String name = null;
 		try {
 			int ChattingSocketPort = 4000;
