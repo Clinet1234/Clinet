@@ -1,8 +1,10 @@
 package client;
 
+import loginserver.loginclient;
+
 public class Main {
 	public static void main(String[] args) {
-		ILoginClient login_server; // = new ~
+		ILoginClient login_server = new loginclient(); 
 		ILobbyClient lobby_server; // = new ~
 		IChattingClient chatting_server; //  = new ~
 		boolean result = login_server.connectLoginServer();

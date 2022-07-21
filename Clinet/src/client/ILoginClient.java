@@ -9,7 +9,7 @@ import java.io.DataOutputStream;
 
 public interface ILoginClient {
 	
-	boolean connectLoginServer() throws IOException;
+	boolean connectLoginServer();
 }
 
 

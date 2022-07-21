@@ -1,4 +1,4 @@
-package client;
+package loginserver;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -8,13 +8,18 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
+import client.ILoginClient;
+
 public class loginclient implements ILoginClient {
 
 	@Override
-	public boolean connectLoginServer() throws IOException {
+	public boolean connectLoginServer()  {
+		try {
 		Scanner sc = new Scanner(System.in);
+		String ip;
+		ip = sc.nextLine();
 		
-		Socket socket = new Socket("",1233);
+		Socket socket = new Socket(ip,1233);
 		InputStream send = socket.getInputStream();
 		DataInputStream ins = new DataInputStream(send);
 		OutputStream ou = socket.getOutputStream();
@@ -100,7 +105,7 @@ public class loginclient implements ILoginClient {
 	}
 	
 
-		
+		}catch(Exception e) {e.printStackTrace();}	
 		return false;
 	}
 
