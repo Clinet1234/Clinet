@@ -64,7 +64,7 @@ public class LobbyServer {
 		}
 		System.out.println("starting to make thread for accepting chatting servers..");
 		Thread lobbyChattingServerHandler = new LobbyChattingServerHandler();
-		lobbyChattingServerHandler.run();
+		lobbyChattingServerHandler.start();
 		System.out.println("finished to make thread for accepting chatting servers");
 		
 		try {
