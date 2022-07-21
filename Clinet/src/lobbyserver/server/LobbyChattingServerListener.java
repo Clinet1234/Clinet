@@ -12,19 +12,18 @@ import java.util.StringTokenizer;
 
 public class LobbyChattingServerListener extends Thread {
 
-    private static final int CHATTING_PORT = 3400;
     private ServerSocket chatting_server;
     private Socket chatting_socket;
     private int server_id;
 
-    public LobbyChattingServerListener(int serverID) {
+    public LobbyChattingServerListener(ServerSocket chatting_server, int serverID) {
+    	this.chatting_server = chatting_server;
         server_id = serverID;
     }
     
     @Override
     public void run() {
         try {
-            chatting_server = new ServerSocket(CHATTING_PORT);
             chatting_socket = chatting_server.accept();
             System.out.println("new chatting server " + server_id + " accepted : " + 
                 Integer.toString(chatting_server.getLocalPort()));

@@ -1,5 +1,6 @@
 package lobbyserver.server;
 
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 
@@ -9,9 +10,12 @@ public class LobbyServer {
 
 	private static LobbyServer INSTANCE = new LobbyServer();
 	public static final int CLIENT_PORT = 3000;
+    private static final int CHATTING_PORT = 3400;
 
 	private ArrayList<LobbyChattingServerListener> chatting_servers;
 	private boolean isRunning;
+	
+	private ServerSocket chatting_server;
 	
 	private LobbyServer() {
 		chatting_servers = new ArrayList<LobbyChattingServerListener>();
@@ -23,6 +27,11 @@ public class LobbyServer {
 	
 	public void init() {
 		System.out.println("lobby server started init");
+        try {
+			chatting_server = new ServerSocket(CHATTING_PORT);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		addChatting();
 		this.isRunning = true;
 		System.out.println("lobby server finished init");
@@ -59,7 +68,7 @@ public class LobbyServer {
 	}
 	
 	public void addChatting() {
-		LobbyChattingServerListener chating = new LobbyChattingServerListener(chatting_servers.size());
+		LobbyChattingServerListener chating = new LobbyChattingServerListener(chatting_server, chatting_servers.size());
 		chating.run();
 		chatting_servers.add(chating);
 	}
