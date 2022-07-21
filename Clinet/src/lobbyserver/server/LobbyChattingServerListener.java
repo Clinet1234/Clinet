@@ -10,38 +10,25 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
-public class LobbyChattingServerListener extends Thread {
+public class LobbyChattingServerListener {
 
-    private ServerSocket chatting_server;
-    private Socket chatting_socket;
+    private Socket socket;
     private int server_id;
 
-    public LobbyChattingServerListener(ServerSocket chatting_server, int serverID) {
-    	this.chatting_server = chatting_server;
+    public LobbyChattingServerListener(Socket socket, int serverID) {
+    	this.socket = socket;
         server_id = serverID;
-    }
-    
-    @Override
-    public void run() {
-        try {
-            chatting_socket = chatting_server.accept();
-            System.out.println("new chatting server " + server_id + " accepted : " + 
-                Integer.toString(chatting_server.getLocalPort()));
-            LobbyServer.getInstance().addChatting();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
     }
     
     public String get_user() {
         try {
             String res = "";
 
-            OutputStream out = chatting_socket.getOutputStream();
+            OutputStream out = socket.getOutputStream();
             PrintWriter writer = new PrintWriter(out, true);
             writer.println("1");
             
-            InputStream in = chatting_socket.getInputStream();
+            InputStream in = socket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			StringTokenizer st = new StringTokenizer(reader.readLine());
 			int cnt = Integer.parseInt(st.nextToken());
@@ -59,7 +46,7 @@ public class LobbyChattingServerListener extends Thread {
     public void allow_user_in_chatting_server(String userip) {
         OutputStream out;
 		try {
-			out = chatting_socket.getOutputStream();
+			out = socket.getOutputStream();
 	        PrintWriter writer = new PrintWriter(out, true);
 	        writer.println("2 " + userip);
 		} catch (IOException e) {
@@ -70,7 +57,7 @@ public class LobbyChattingServerListener extends Thread {
     public void closeServer() {
     	try {
             System.out.println("chatting server " + server_id + " closed");
-			chatting_server.close();
+            socket.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
