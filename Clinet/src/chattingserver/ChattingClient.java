@@ -11,7 +11,7 @@ public class ChattingClient implements IChattingClient {
 
 	public void connectChattingServer(String ipaddress) {
 		String name = "user";
-		int port = 3400;
+		int port = 4000;
 		try {
 			Socket socket = new Socket(ipaddress, port);  
 			System.out.println("포트번호: "+port+"로 서버 접속 성공");

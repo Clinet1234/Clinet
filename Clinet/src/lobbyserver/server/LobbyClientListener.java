@@ -30,7 +30,7 @@ public class LobbyClientListener extends Thread {
 			StringTokenizer st = new StringTokenizer(reader.readLine());
 			int cnt = Integer.parseInt(st.nextToken());
 			
-            LobbyServer.getInstance().allow_user_in_chatting_server(cnt, socket.getLocalAddress().toString());
+            LobbyServer.getInstance().allow_user_in_chatting_server(cnt, socket.getInetAddress().toString());
             
             socket.close();
         } catch (Exception e) {
