@@ -43,6 +43,10 @@ public class LobbyChattingServerListener {
         return "";
     }
     
+    public String getIP() {
+    	return socket.getInetAddress().toString();
+    }
+    
     public void allow_user_in_chatting_server(String userip) {
         OutputStream out;
 		try {

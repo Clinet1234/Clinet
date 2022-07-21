@@ -33,7 +33,7 @@ class server_thread extends Thread{
 			
 			String dbURL="jdbc:mysql://localhost:3306/user";
 			String dbID="root"; 
-			String dbPassword="1015"; 
+			String dbPassword="2345";
 			
 			try{
 				Class.forName("com.mysql.cj.jdbc.Driver"); 

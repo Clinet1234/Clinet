@@ -129,4 +129,13 @@ public class LobbyServer {
 		res += "\nend_server_info";
 		return res;
 	}
+	
+	public String getChattingServerIp(int index) {
+		if (index < chatting_servers.size()) {
+			return chatting_servers.get(index).getIP();
+		} else {
+			System.out.println("requested chatting server index from client is not valid.");
+			return null;
+		}
+	}
 }

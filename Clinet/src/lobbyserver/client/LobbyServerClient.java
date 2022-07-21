@@ -46,7 +46,13 @@ public class LobbyServerClient implements ILobbyClient {
 			OutputStream out = socket.getOutputStream();
 			PrintWriter writer = new PrintWriter(out, true);
 			writer.println(Integer.toString(input_num));
+			
+			
+			str = rd.readLine();	
+			System.out.println("recieved ip from lobby server : ip -" + str);
+			str = str.substring(1);
 			socket.close();
+			return str;
 		} catch (Exception e) {
 			System.out.println("failed to connect lobby server + " + lobby_ip);
 			e.printStackTrace();

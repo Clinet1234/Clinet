@@ -30,6 +30,10 @@ public class LobbyClientListener extends Thread {
 			StringTokenizer st = new StringTokenizer(reader.readLine());
 			int cnt = Integer.parseInt(st.nextToken());
 			
+			System.out.println("requested chatting server number from client : " + cnt);
+			String str = LobbyServer.getInstance().getChattingServerIp(cnt);
+			System.out.println("send chatting server ip for request : ip -" + str);
+			writer.println(str);
             LobbyServer.getInstance().allow_user_in_chatting_server(cnt, socket.getInetAddress().toString());
             
             socket.close();
