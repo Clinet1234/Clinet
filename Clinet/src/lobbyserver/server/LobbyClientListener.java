@@ -41,10 +41,5 @@ public class LobbyClientListener extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
-			ssocket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
     }
 }

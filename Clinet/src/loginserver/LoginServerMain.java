@@ -194,7 +194,5 @@ public class LoginServerMain {
 			Thread th = new server_thread(socketUser);
 			th.start();
 		}
- 
-    
 	}
 }
