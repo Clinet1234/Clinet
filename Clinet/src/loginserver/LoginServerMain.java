@@ -39,7 +39,7 @@ class server_thread extends Thread{
 				Class.forName("com.mysql.cj.jdbc.Driver"); 
 				conn = DriverManager.getConnection(dbURL, dbID, dbPassword); 
 				
-
+				
 			int ch;
 			while (true) {
 				ch = ins.readInt();
